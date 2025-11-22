@@ -1,12 +1,40 @@
 const args = process.argv.slice(2);
-console.log(args);
 
 const choices = ["rock", "paper", "scissors"];
 const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-console.log(computerChoice);
 
-if (args.length != 1 || typeof args != "string") {
+// Extract the user's choice from the arguments array
+const userChoice = args[0];
+
+// Validate user input
+if (args.length !== 1) {
     console.error(
-        "Choose only one of the following items: 'rock', 'paper' or 'scissors'!"
+        "Please provide exactly one argument: 'rock', 'paper', or 'scissors'!"
     );
+} else if (!choices.includes(userChoice.toLowerCase())) {
+    console.error(
+        `Invalid choice: "${userChoice}". Please choose 'rock', 'paper', or 'scissors'.`
+    );
+} else {
+    // proceed with the game logic.
+    console.log(`You chose: ${userChoice.toLowerCase()}`);
+    console.log(`Computer chose: ${computerChoice}`);
+
+    const userChoiceLower = userChoice.toLowerCase();
+
+    if (userChoiceLower === computerChoice) {
+        console.log("Tie!");
+    } else if (userChoiceLower === "rock" && computerChoice === "scissors") {
+        console.log("You win!");
+    } else if (userChoiceLower === "rock" && computerChoice === "paper") {
+        console.log("You loose!");
+    } else if (userChoiceLower === "paper" && computerChoice === "rock") {
+        console.log("You win!");
+    } else if (userChoiceLower === "paper" && computerChoice === "scissors") {
+        console.log("You loose!");
+    } else if (userChoiceLower === "scissors" && computerChoice === "paper") {
+        console.log("You win!");
+    } else if (userChoiceLower === "scissors" && computerChoice === "rock") {
+        console.log("You loose!");
+    }
 }
