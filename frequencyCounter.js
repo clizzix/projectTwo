@@ -1,5 +1,5 @@
 const args = process.argv.slice(2);
-// create Object to store word Frequencies
+// create Object to store word Frequencies in key: value pairs
 const wordCounts = {};
 // clean input (transform to string and replace characters with whitespace)
 const cleanSentence = args
