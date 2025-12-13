@@ -1,4 +1,3 @@
-// create Function to check if the string is a palindrome
 const isPalindrome = (text) => {
     // convert to lowercase and remove all ambiguous characters to make the comparison robust
     const cleanText = text.toLowerCase().replace(/[^a-z0-9]/g, "");

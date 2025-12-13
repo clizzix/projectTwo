@@ -4,13 +4,15 @@ const suffixWay = 'way';
 
 const pigLatinTranslation = (str) => {
     if (!str) {
-        return '';
+        return 'Please Enter a string';
     }
 
     const lowerWord = str.toLowerCase();
     if (vowels.includes(lowerWord[0])) {
         return str + suffixWay;
     }
+
+    
     let firstVowelIndex = -1;
     for (let i = 0; i < lowerWord.length; i++) {
         if (vowels.includes(lowerWord[i])) {

@@ -11,7 +11,7 @@ function encryptChar(char, shift) {
     if (originalCharCode >= lowerA && originalCharCode <= lowerZ) {
         // It's a lowercase letter
 
-        // Convert the carachter code to a 0-25 index
+        // Convert the character code to a 0-25 index
         const charIndex = originalCharCode - lowerA;
 
         // Apply the shift
@@ -27,12 +27,14 @@ function encryptChar(char, shift) {
 }
 
 function main() {
+
+    // Extract char (phrase) and shift (shiftStr) from Input
     const phrase = process.argv[2];
     const shiftStr = process.argv[3];
 
     if (!phrase || !shiftStr) {
         console.error(
-            'Error: Please provide both a phrase and a shift number.'
+            'Error: Please provide both, a phrase and a shift number.'
         );
         return;
     }
